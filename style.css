@@ -546,7 +546,7 @@ nav {
 }
 
 .project-box .popup-image span {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 10px;
     font-size: 40px;
@@ -1098,7 +1098,7 @@ footer {
     .project-box .popup-image span {
         position: absolute;
         top: 0;
-        right: 70px;
+        right: 55px;
         font-size: 40px;
         font-weight: bolder;
         color: white;
