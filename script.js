@@ -53,6 +53,22 @@ popup.addEventListener("click", (e) => {
     popup.style.display = "none";
   }
 });
+// Also handle the back button
+window.addEventListener("popstate", (event) => {
+  if (popup.style.display === "block") {
+    closePopup();
+  }
+});
+
+function closePopup() {
+  popup.style.display = "none";
+  popupImg.src = "";
+
+  // Only go back if hash is #popup to prevent going too far back
+  if (location.hash === "#popup") {
+    history.back();
+  }
+}
 
 
 
