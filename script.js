@@ -32,43 +32,18 @@ function headerShadow() {
 
 
 
-document.querySelectorAll(".image2 img").forEach(image => {
-  image.onclick = () => {
-    document.querySelector(".popup-image").style.display = "block";
-    document.querySelector(".popup-image img").src =
-      image.getAttribute("src");
-  };
-});
+// document.querySelectorAll(".image2 img").forEach(image => {
+//   image.onclick = () => {
+//     document.querySelector(".popup-image").style.display = "block";
+//     document.querySelector(".popup-image img").src =
+//       image.getAttribute("src");
+//   };
+// });
 
-document.querySelector(".popup-image span").onclick = () => {
-  document.querySelector(".popup-image").style.display = "none";
-};
-// Close popup when clicking on <span> OR outside the image
-const popup = document.querySelector(".popup-image");
-const popupImg = popup.querySelector("img");
+// document.querySelector(".popup-image span").onclick = () => {
+//   document.querySelector(".popup-image").style.display = "none";
+// }
 
-popup.addEventListener("click", (e) => {
-  // Check if click is outside the popup image
-  if (e.target !== popupImg) {
-    popup.style.display = "none";
-  }
-});
-// Also handle the back button
-window.addEventListener("popstate", (event) => {
-  if (popup.style.display === "block") {
-    closePopup();
-  }
-});
-
-function closePopup() {
-  popup.style.display = "none";
-  popupImg.src = "";
-
-  // Only go back if hash is #popup to prevent going too far back
-  if (location.hash === "#popup") {
-    history.back();
-  }
-}
 
 
 
