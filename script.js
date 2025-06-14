@@ -43,6 +43,18 @@ document.querySelectorAll(".image2 img").forEach(image => {
 document.querySelector(".popup-image span").onclick = () => {
   document.querySelector(".popup-image").style.display = "none";
 };
+// Close popup when clicking on <span> OR outside the image
+const popup = document.querySelector(".popup-image");
+const popupImg = popup.querySelector("img");
+
+popup.addEventListener("click", (e) => {
+  // Check if click is outside the popup image
+  if (e.target !== popupImg) {
+    popup.style.display = "none";
+  }
+});
+
+
 
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
 const sr = ScrollReveal({
